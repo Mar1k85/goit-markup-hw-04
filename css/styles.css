@@ -13,6 +13,7 @@
   --secondary-bthbckgrd-color: #188ce8;
   --header-border-color: #ececec;
   --card-border-color: #eeeeee;
+  --icon-fill: #afb1b8;
 
   /* fonts variables */
   --primary-font-family: "Roboto", sans-serif;
@@ -91,6 +92,9 @@ ul {
   gap: 50px;
   margin-left: 93px;
 }
+.icon {
+  margin-right: 10px;
+}
 .nav-link {
   display: block;
   padding-top: 32px;
@@ -106,13 +110,21 @@ ul {
 }
 .contacts-list {
   display: flex;
+  align-items: center;
   gap: 50px;
   margin-left: auto;
 }
+.contacts-link:hover,
+.contacts-link:focus {
+  fill: var(--accent-text-color);
+}
 .contacts-link {
+  display: flex;
   padding-top: 32px;
   padding-bottom: 32px;
+  align-items: center;
 
+  fill: var(--primary-text-color);
   color: var(--primary-text-color);
   font-weight: 500;
   line-height: 1.14;
@@ -125,7 +137,15 @@ ul {
   padding-top: 106px;
 }
 .hero {
+  padding-top: 0;
   background-color: var(--footer-bckgrd-color);
+}
+.hero-wrap {
+  padding-top: 94px;
+  max-width: 1600px;
+  margin: 0 auto;
+  background-image: linear-gradient(to right, #2f303a66, #2f303a66),
+    url(../images/hero-Img.jpg);
 }
 .hero-title {
   margin: 0 auto;
@@ -178,10 +198,21 @@ ul {
   flex-wrap: wrap;
   gap: 30px;
 }
+.icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  background-color: var(--btn-bckgrd-color);
+  width: 270px;
+  height: 120px;
+}
 .benefits-list .item {
   width: 270px;
   max-width: 270px;
 }
+
 .benefits-subtitle {
   margin-bottom: 10px;
   color: var(--secondary-text-color);
@@ -221,22 +252,41 @@ ul {
   background-color: var(--btn-bckgrd-color);
 }
 .team {
-  /* background-color: var(--btn-bckgrd-color); */
   padding-bottom: 94px;
-  /* padding-top: 94px; */
-}
-.team-title {
-  margin-bottom: 50px;
-  color: var(--secondary-text-color);
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.16;
-  text-align: center;
 }
 .card-list {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+}
+.social-icon {
+  fill: currentColor;
+}
+
+.icon-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  color: var(--icon-fill);
+}
+.icon-list .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-link:hover,
+.social-link:focus {
+  color: var(--hero-primary-color);
+  background-color: var(--accent-text-color);
+  border-radius: 50%;
+  border-color: transparent;
 }
 .card-img {
   display: block;
@@ -265,6 +315,37 @@ ul {
   font-size: 16px;
   line-height: 1.18;
   text-align: center;
+  margin-bottom: 16px;
+}
+
+/* clients css */
+.section.clients {
+  padding-bottom: 94px;
+}
+.clients-icon {
+  fill: currentColor;
+}
+.clients-icon:hover {
+  fill: var(--accent-text-color);
+}
+.clients-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--icon-fill);
+  border-radius: 4px;
+  color: var(--icon-fill);
+}
+.clients-link:hover,
+.clients-link:focus {
+  border-color: var(--accent-text-color);
+  color: var(--accent-text-color);
+}
+.clients-list {
+  display: flex;
+  gap: 30px;
 }
 /* fooote css */
 .footer {
@@ -272,7 +353,29 @@ ul {
   padding-bottom: 60px;
   background-color: var(--footer-bckgrd-color);
 }
+.footer-wrap {
+  display: flex;
+}
+.addr-wrap {
+}
+.footer-box {
+  margin-left: 70px;
+  margin-top: 12px;
+}
+.footer-subtitle {
+  margin-bottom: 20px;
 
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--hero-primary-color);
+}
+.footer-social {
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--hero-primary-color);
+}
 .footer-logo {
   display: block;
   margin-bottom: 20px;
@@ -339,6 +442,11 @@ ul {
   border-bottom: 1px solid var(--card-border-color);
   border-right: 1px solid var(--card-border-color);
   border-left: 1px solid var(--card-border-color);
+}
+.portfolio-item:hover,
+.portfolio-item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .portf-img {
   display: block;
