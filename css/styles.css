@@ -11,6 +11,9 @@
   --logo-text-color: #000000;
   --addr-link-color: rgba(255, 255, 255, 0.6);
   --secondary-bthbckgrd-color: #188ce8;
+  --header-border-color: #ececec;
+  --card-border-color: #eeeeee;
+  --icon-fill: #afb1b8;
 
   /* fonts variables */
   --primary-font-family: "Roboto", sans-serif;
@@ -54,8 +57,12 @@ ul {
   padding-right: 15px;
   margin: 0 auto;
 }
+.section {
+  padding-top: 94px;
+}
 /* header css */
 .page-header {
+  border-bottom: 1px solid var(--header-border-color);
 }
 .header-nav {
   display: flex;
@@ -65,7 +72,7 @@ ul {
   display: flex;
   align-items: center;
 }
-.logo {
+.header-logo {
   display: block;
   padding-top: 24px;
   padding-bottom: 25px;
@@ -82,10 +89,11 @@ ul {
 }
 .nav-list {
   display: flex;
+  gap: 50px;
   margin-left: 93px;
 }
-.nav-list .item:not(:last-child) {
-  margin-right: 50px;
+.icon {
+  margin-right: 10px;
 }
 .nav-link {
   display: block;
@@ -102,30 +110,44 @@ ul {
 }
 .contacts-list {
   display: flex;
+  align-items: center;
+  gap: 50px;
   margin-left: auto;
 }
-.contacts-list .item:not(:last-child) {
-  margin-right: 50px;
+.contacts-link:hover,
+.contacts-link:focus {
+  fill: var(--accent-text-color);
 }
 .contacts-link {
+  display: flex;
   padding-top: 32px;
   padding-bottom: 32px;
+  align-items: center;
 
+  fill: var(--primary-text-color);
   color: var(--primary-text-color);
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
 /* hero css */
-.hero {
-  background-color: var(--footer-bckgrd-color);
+.hero-container {
   text-align: center;
+  padding-bottom: 200px;
+  padding-top: 106px;
 }
+.hero {
+  padding-top: 94px;
+  max-width: 1600px;
+  margin: 0 auto;
+  background-image: linear-gradient(to right, #2f303a66, #2f303a66),
+    url(../images/hero-Img.jpg);
+}
+
 .hero-title {
   margin: 0 auto;
-  max-width: 696px;
-  padding-top: 200px;
   margin-bottom: 30px;
+  max-width: 696px;
 
   font-weight: 900;
   font-size: 44px;
@@ -136,9 +158,7 @@ ul {
   color: var(--hero-primary-color);
 }
 .hero-btn {
-  width: 216px;
-  height: 50px;
-  margin-bottom: 200px;
+  padding: 10px 32px;
 
   color: var(--hero-primary-color);
   font-weight: 700;
@@ -147,7 +167,7 @@ ul {
   letter-spacing: 0.06em;
   background-color: var(--accent-text-color);
   cursor: pointer;
-  border: 0px solid transparent;
+  border-color: transparent;
   border-radius: 4px;
 }
 .hero-btn:active,
@@ -169,18 +189,27 @@ ul {
   clip-path: inset(50%);
   margin: -1px;
 }
-.benefits {
-}
-.wrapper {
-}
+
 .benefits-list {
   display: flex;
-  padding-top: 94px;
-  padding-bottom: 47px;
+  flex-wrap: wrap;
+  gap: 30px;
 }
-.benefits .item:not(:last-child) {
-  margin-right: 30px;
+.icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  background-color: var(--btn-bckgrd-color);
+  width: 270px;
+  height: 120px;
 }
+.benefits-list .item {
+  width: 270px;
+  max-width: 270px;
+}
+
 .benefits-subtitle {
   margin-bottom: 10px;
   color: var(--secondary-text-color);
@@ -192,50 +221,71 @@ ul {
 .benefits-text {
   line-height: 1.71;
 }
-/* works of studio css */
-.work {
-}
+
 .image {
   display: block;
 }
 .subtitle {
-  padding-top: 47px;
   margin-bottom: 50px;
   color: var(--secondary-text-color);
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
   text-align: center;
+}
+.work-section {
+  padding-bottom: 94px;
 }
 .work-list {
   display: flex;
-  padding-bottom: 94px;
+  flex-wrap: wrap;
+  gap: 30px;
 }
-.work-list .item:not(:last-child) {
-  margin-right: 30px;
+.work-list .image {
+  max-width: 370px;
 }
 /* our team css */
-.team {
+.team-section {
   background-color: var(--btn-bckgrd-color);
 }
-.team-title {
-  padding-top: 94px;
-  margin-bottom: 50px;
-  color: var(--secondary-text-color);
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.16;
-  text-align: center;
+.team {
+  padding-bottom: 94px;
 }
 .card-list {
   display: flex;
-  padding-bottom: 94px;
+  flex-wrap: wrap;
+  gap: 30px;
 }
-.card-list .item:not(:last-child) {
-  margin-right: 30px;
+.social-icon {
+  fill: currentColor;
+}
+
+.icon-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  color: var(--icon-fill);
+}
+.icon-list .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-link:hover,
+.social-link:focus {
+  color: var(--hero-primary-color);
+  background-color: var(--accent-text-color);
+  border-radius: 50%;
+  border-color: transparent;
 }
 .card-img {
-  margin-bottom: 30px;
   display: block;
 }
 .card-item {
@@ -243,6 +293,10 @@ ul {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+}
+.card-discr {
+  text-align: center;
+  padding: 30px 30px;
 }
 
 .card-title {
@@ -255,24 +309,82 @@ ul {
   text-align: center;
 }
 .card-text {
-  padding-bottom: 30px;
   font-size: 16px;
   line-height: 1.18;
   text-align: center;
+  margin-bottom: 16px;
+}
+
+/* clients css */
+.section.clients {
+  padding-bottom: 94px;
+}
+.clients-icon {
+  fill: currentColor;
+}
+.clients-icon:hover {
+  fill: var(--accent-text-color);
+}
+.clients-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--icon-fill);
+  border-radius: 4px;
+  color: var(--icon-fill);
+}
+.clients-link:hover,
+.clients-link:focus {
+  border-color: var(--accent-text-color);
+  color: var(--accent-text-color);
+}
+.clients-list {
+  display: flex;
+  gap: 30px;
 }
 /* fooote css */
 .footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: var(--footer-bckgrd-color);
 }
-.logo.footer-logo {
-  padding-top: 50px;
-  padding-bottom: 0;
+.footer-wrap {
+  display: flex;
+  align-items: baseline;
+}
+.addr-wrap {
+}
+.footer-box {
+  margin-left: 70px;
+}
+.footer-subtitle {
   margin-bottom: 20px;
+
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   color: var(--hero-primary-color);
 }
-.addr-list {
-  padding-bottom: 60px;
+.footer-social {
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--hero-primary-color);
 }
+.footer-logo {
+  display: block;
+  margin-bottom: 20px;
+
+  font-family: var(--secondary-font-family);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  text-decoration: none;
+  color: var(--hero-primary-color);
+}
+
 .addr-list .item:not(:last-child) {
   margin-bottom: 9px;
 }
@@ -286,8 +398,19 @@ ul {
 }
 /* potfolio css */
 /* filter buttons css*/
+.portfolio {
+  padding-bottom: 94px;
+}
+.filter-list {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 34px;
+}
+
 .filter-btn {
-  font-family: inherit;
+  padding: 6px 22px;
+
   color: var(--secondary-text-color);
   background-color: var(--btn-bckgrd-color);
   border-radius: 4px;
@@ -302,13 +425,37 @@ ul {
 .filter-btn:focus {
   color: var(--hero-primary-color);
   background-color: var(--accent-text-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
+.portf-text {
+  padding: 20px 24px;
 
-.portfolio-item {
+  border-bottom: 1px solid var(--card-border-color);
+  border-right: 1px solid var(--card-border-color);
+  border-left: 1px solid var(--card-border-color);
+}
+.portfolio-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.portfolio-link:hover,
+.portfolio-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.portf-img {
+  display: block;
 }
 .portfolio-subtitle {
+  margin-bottom: 4px;
+
   color: var(--secondary-text-color);
   font-weight: 700;
   font-size: 18px;
@@ -319,6 +466,3 @@ ul {
   font-size: 16px;
   line-height: 1.87;
 }
-
-/* прошу вашої уваги , у нас в макеті кнопка в hero не має стану hover , тільки
-active */
